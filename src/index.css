@@ -15,3 +15,8 @@ code {
 :root {
   --brand-color: #308283a7;
 }
+
+ul{
+  list-style: none;
+}
+

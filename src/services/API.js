@@ -8,4 +8,7 @@ export async function getTrendingMovies() {
     return response.data
 }
 
-// export async function search
+export async function getMovieById(id) {
+        const response = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
+    return response.data
+}

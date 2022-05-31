@@ -1,11 +1,17 @@
 import { Link, useNavigate, Outlet } from "react-router-dom";
+import { useState, useEffect } from 'react';
 import { Navigation } from "../Navigation";
 import styles from './HomePage.module.css';
+import {getTrendingMovies} from "../../services/API"
 
-export function HomePage({ data }) {
-    console.log(data)
-    const link = useNavigate();
-    console.log(link);
+export function HomePage() {
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        getTrendingMovies().then( data =>setData(data.results))      
+    }, [])   
+
+    const url = useNavigate();
+    console.log(url);
     return (
         <>
         <Navigation />
