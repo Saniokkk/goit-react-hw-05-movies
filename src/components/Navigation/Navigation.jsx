@@ -8,7 +8,7 @@ export function Navigation() {
                 <NavLink to='/' className={styles.navLink}>Home</NavLink>
                 <NavLink to='/movies' className={styles.navLink}>Movies</NavLink>
             </nav>
-            <hr style={{boxShadow: "0px 3px 10px 1px var(--brand-color)", width: "90%"}}></hr>
+            <hr style={{ boxShadow: "0px 3px 10px 1px var(--brand-color)", width: "90%" }}></hr>            
         </>
     )
 }  
