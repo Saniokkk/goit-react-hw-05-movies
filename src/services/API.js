@@ -12,3 +12,23 @@ export async function getMovieById(id) {
         const response = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
     return response.data
 }
+
+export async function getActorsMovieById(id) {
+        const response = await axios.get(`/movie/${id}/credits?api_key=${API_KEY}`);
+    return response.data
+}
+
+export async function getReviewsById(id) {
+        const response = await axios.get(`/movie/${id}/reviews?api_key=${API_KEY}`);
+    return response.data
+}
+
+export async function getSearchMovies(search) {
+        const response = await axios.get(`/search/movie?api_key=${API_KEY}&query=${search}`);
+    return response.data
+}
+
+export async function getCreditsById(id) {
+    const response = await axios.get(`/credit/${id}?api_key=${API_KEY}`);
+    return response.data;
+}

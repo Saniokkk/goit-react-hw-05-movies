@@ -1,0 +1,13 @@
+.cardList{
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.cardCast{
+    width: 150px;
+    
+}
+
+.cardCast > img{
+    width: 100%;
+}

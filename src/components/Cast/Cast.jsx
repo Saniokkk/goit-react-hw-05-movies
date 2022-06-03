@@ -1,0 +1,30 @@
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom";
+import { imageDefaultLink } from '../../services/imageDefaultLink';
+import * as API from '../../services/API';
+import styles from './Cast.module.css';
+
+
+export function Cast() {
+    const [data, setData] = useState(null);
+    const movieId = useParams().movieId;
+
+    useEffect(() => {
+        API.getActorsMovieById(movieId).then((response) => setData(response.cast));
+    }, [movieId])
+    
+    console.log(data)
+    return ( data &&
+        <ul className={styles.cardList}>
+            {data.map((response) => {
+                return <li key={response.id}>
+                            <div className={styles.cardCast}>
+                                <img src={`${imageDefaultLink}${response.profile_path}`} alt={response.name} />
+                                <h3>{response.name}</h3>
+                                <p>{response.character}</p>
+                            </div>
+                        </li>
+            })}
+        </ul>
+        )
+}   

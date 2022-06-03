@@ -1,0 +1,24 @@
+.movieDetails{
+    display: flex;   
+    margin-top: 20px;
+}
+
+.img{
+    width: 300px;
+    
+}
+
+.descMovie{
+    margin-left:20px;
+    text-align: left;
+}
+
+.reviews{
+    margin-top: 20px;
+    text-align: left;
+}
+
+.reviews > a {
+
+display: block;
+}
