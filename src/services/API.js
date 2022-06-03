@@ -13,7 +13,7 @@ export async function getMovieById(id) {
     return response.data
 }
 
-export async function getActorsMovieById(id) {
+export async function getCreditsById(id) {
         const response = await axios.get(`/movie/${id}/credits?api_key=${API_KEY}`);
     return response.data
 }
@@ -28,7 +28,3 @@ export async function getSearchMovies(search) {
     return response.data
 }
 
-export async function getCreditsById(id) {
-    const response = await axios.get(`/credit/${id}?api_key=${API_KEY}`);
-    return response.data;
-}

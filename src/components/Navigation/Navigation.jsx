@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { Hr } from '../Hr';
 import styles from './Navigation.module.css';
 
 export function Navigation() {
@@ -8,7 +9,7 @@ export function Navigation() {
                 <NavLink to='/' className={styles.navLink}>Home</NavLink>
                 <NavLink to='/movies' className={styles.navLink}>Movies</NavLink>
             </nav>
-            <hr style={{ boxShadow: "0px 3px 10px 1px var(--brand-color)", width: "" }}></hr>            
+            <Hr />            
         </>
     )
 }  

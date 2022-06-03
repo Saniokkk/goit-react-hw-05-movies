@@ -10,7 +10,7 @@ export function Cast() {
     const movieId = useParams().movieId;
 
     useEffect(() => {
-        API.getActorsMovieById(movieId).then((response) => setData(response.cast));
+        API.getCreditsById(movieId).then((response) => setData(response.cast));
     }, [movieId])
     
     console.log(data)
