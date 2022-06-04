@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { imageDefaultLink } from "services/imageDefaultLink";
+import { BackBtn } from '../BackBtn';
 import * as API from '../../services/API';
 import styles from './MovieDetailsPage.module.css';
 
-export function MovieDetailsPage() {
+export function MovieDetailsPage() { 
+    const loc = useLocation();
+    console.log(loc.state)
     const [data, setData] = useState(null);
     const movieId = useParams().movieId;
     console.log(data)
@@ -13,7 +16,8 @@ export function MovieDetailsPage() {
     }, [movieId])
     
     return (data &&
-        <>   
+        <>
+        <BackBtn className={styles.goBack} >Go back</BackBtn>
         <div className={styles.movieDetails}>
             <div>
                 <img className={styles.img} src={`${imageDefaultLink}${data.poster_path}`} alt="" />

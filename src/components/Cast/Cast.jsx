@@ -17,8 +17,8 @@ export function Cast() {
     return ( data &&
         <ul className={styles.cardList}>
             {data.map((response) => {
-                return <li key={response.id}>
-                            <div className={styles.cardCast}>
+                return <li key={response.id} className={styles.cardCast}>
+                            <div>
                                 <img src={`${imageDefaultLink}${response.profile_path}`} alt={response.name} />
                                 <h3>{response.name}</h3>
                                 <p>{response.character}</p>
