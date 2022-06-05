@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { imageDefaultLink } from '../../services/imageDefaultLink';
 import * as API from '../../services/API';
 import styles from './Reviews.module.css';
@@ -7,11 +7,18 @@ import styles from './Reviews.module.css';
 
 export function Reviews() {
     const [reviews, setReviews] = useState(null);
-    const movieId = useParams().movieId;
+    const {movieId} = useParams();
+    const location = useLocation();
+    const { state, pathname, search } = location;
+    console.log(state)
+
+
 
     useEffect(() => {
-        API.getReviewsById(movieId).then((data)=> setReviews(data.results));
-    }, [movieId])
+        API.getReviewsById(movieId).then((data) => setReviews(data.results));
+    }, [])
+
+    
     
     console.log(reviews );
 

@@ -27,4 +27,5 @@ export async function getSearchMovies(search) {
         const response = await axios.get(`/search/movie?api_key=${API_KEY}&query=${search}`);
     return response.data
 }
+// https://api.themoviedb.org/3/movie/${id}/reviews?api_key=e095a1290a6e5cce004c0f0ac9fc4656
 

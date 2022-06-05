@@ -6,14 +6,13 @@ import * as API from '../../services/API';
 import styles from './MovieDetailsPage.module.css';
 
 export function MovieDetailsPage() { 
-    const loc = useLocation();
-    console.log(loc.state)
+    const {state} = useLocation();
     const [data, setData] = useState(null);
-    const movieId = useParams().movieId;
-    console.log(data)
+    const movieId = useParams().movieId;  
+
     useEffect(() => {
         API.getMovieById(movieId).then(setData);
-    }, [movieId])
+    }, [])
     
     return (data &&
         <>
@@ -36,8 +35,8 @@ export function MovieDetailsPage() {
             </div>
         </div>
         <div className={styles.reviews}>
-            <Link to={`/movies/${data.id}/cast`}>Cast</Link>
-            <Link to={`/movies/${data.id}/reviews`}>Reviews</Link>
+            <Link to={`/movies/${data.id}/cast`} state={state}>Cast</Link>
+            <Link to={`/movies/${data.id}/reviews`} state={state}>Reviews</Link>
         </div>
         <Outlet />
         </>

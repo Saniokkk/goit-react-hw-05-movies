@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { imageDefaultLink } from '../../services/imageDefaultLink';
 import * as API from '../../services/API';
 import styles from './Cast.module.css';
+import placeholderImage from '../../placeholder.png';
 
 
 export function Cast() {
@@ -19,7 +20,7 @@ export function Cast() {
             {data.map((response) => {
                 return <li key={response.id} className={styles.cardCast}>
                             <div>
-                                <img src={`${imageDefaultLink}${response.profile_path}`} alt={response.name} />
+                                <img src={response.profile_path ? `${imageDefaultLink}${response.profile_path}` : placeholderImage} alt={response.name} />
                                 <h3>{response.name}</h3>
                                 <p>{response.character}</p>
                             </div>

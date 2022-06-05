@@ -1,4 +1,26 @@
-    .trendsItem{
+    .trendsList{
+        display: grid;
+        grid-template-columns: repeat(5, 20%);
+        grid-gap: 15px;
+
+    }
+    
+    .trendsItem{       
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
         list-style: none;
-        text-align: left;
+        text-decoration: none;
+    }
+
+    img{
+        border-radius: 5px;
+    }
+    h2{
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    a{
+        text-decoration: none;
     }
