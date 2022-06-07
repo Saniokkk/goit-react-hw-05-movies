@@ -2,7 +2,7 @@ import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from "../../services/API";
 import placeholderImage from '../../placeholder.png';
-import { MoviesList } from "components/MoviesList/MoviesList";
+import  MoviesList  from "components/MoviesList/MoviesList";
 import { CardMovie } from "components/MoviesList/CardMovie";
 import styles from './HomePage.module.css';
 
@@ -25,6 +25,7 @@ function HomePage() {
         <MoviesList>
                 {data.map(({ id, original_title, poster_path }) => {
                     return <CardMovie
+                        key={id}
                         state={currenUrl}
                         id={id}
                         title={original_title}

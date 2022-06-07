@@ -1,5 +1,5 @@
 import { CardMovie } from "components/MoviesList/CardMovie";
-import { MoviesList } from "components/MoviesList/MoviesList";
+import MoviesList from "components/MoviesList/MoviesList";
 import { useState, useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import * as API from '../../services/API';
@@ -47,7 +47,8 @@ function MoviesPage() {
             {data &&               
             <MoviesList>
                 {data.map(({id, title, poster_path}) => {
-                    return <CardMovie                        
+                    return <CardMovie
+                        key={id}    
                         state={currenUrl}
                         id={id}
                         title={title}

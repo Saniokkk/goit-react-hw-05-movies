@@ -29,7 +29,7 @@ function MovieDetailsPage() {
                 <h3>Genres:</h3>
                 <ul>
                     {data.genres.map((data) => {
-                        return <li key={data.id}>{data.name}</li>
+                        return <li key={data.id}><p>{data.name}</p></li>
                     })}      
                 </ul>
             </div>

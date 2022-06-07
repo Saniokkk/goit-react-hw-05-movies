@@ -5,7 +5,7 @@ import styles from './MoviesList.module.css';
 import  defaultImg  from '../../board-placeholder.jpg';
 
 
-export function CardMovie({state, id, title, poster }) {
+export function CardMovie({ state, id, title, poster }) {    
     return (<li key={id} className={styles.cardMovie}>
                     <Link to={`/movies/${id}`} state={state}>
                         <img src={poster ? `${imageDefaultLink}${poster}` : defaultImg} alt={title} />
@@ -16,7 +16,7 @@ export function CardMovie({state, id, title, poster }) {
 
 CardMovie.propTypes = {
     state: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired
+    poster: PropTypes.string
 }

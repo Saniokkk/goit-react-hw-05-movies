@@ -1,14 +1,25 @@
 .cardList{
-    /* display: flex;
-    flex-wrap: wrap; */
     display: grid;
-    grid-template-columns: repeat(6,15%);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
-/* 
-@media screen and () {
-    
-} */
+
+@media screen and (min-width: 480px) {
+    .cardList {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .cardList {    
+            grid-template-columns: repeat(5, 1fr);
+        }
+}
+@media screen and (min-width: 1024px) {
+    .cardList {               
+            grid-template-columns: repeat(6, 1fr);
+        }
+}
 
 .cardCast{
     /* width: 100%; */
@@ -21,8 +32,7 @@
 }
 
 img{
-    width: 100%;
-    /* background-size: contain; */
+    width: 100%;   
 }
 
 h3{
