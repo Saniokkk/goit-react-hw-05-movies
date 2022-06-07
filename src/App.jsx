@@ -39,8 +39,7 @@ function App() {
             element={
               <Suspense fallback={<div>Loading...</div>}>
                 <MovieDetailsPage />
-              </Suspense> }
-          >
+              </Suspense> }>
             <Route path='/movies/:movieId/cast' element={<Suspense fallback={<div>Loading...</div>}><Cast /></Suspense> } />
             <Route path='/movies/:movieId/reviews' element={<Suspense fallback={<div>Loading...</div>}><Reviews /></Suspense>} />
         </Route>         
