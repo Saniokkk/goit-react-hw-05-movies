@@ -1,13 +1,14 @@
-import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
+import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import styles from './HomePage.module.css';
 import { getTrendingMovies } from "../../services/API";
-import { imageDefaultLink } from '../../services/imageDefaultLink';
 import placeholderImage from '../../placeholder.png';
+import { MoviesList } from "components/MoviesList/MoviesList";
+import { CardMovie } from "components/MoviesList/CardMovie";
+import styles from './HomePage.module.css';
 
 console.log(placeholderImage)
 
-export function HomePage() {
+function HomePage() {
     const [data, setData] = useState([]);
     const {pathname, search} = useLocation()
     const currenUrl = `${pathname}${search}`;
@@ -20,18 +21,19 @@ export function HomePage() {
     console.log(url);
     return (
         <>        
-        <h2>Trending today</h2>
-        <ul className={styles.trendsList}>
-            {data.map(({id, original_title, poster_path, vote_average }) => {
-                return (<li key={id} className={styles.trendsItem}>
-                    <Link to={`/movies/${id}`} state={currenUrl}>
-                        <img src={`${imageDefaultLink}${poster_path}`} alt={original_title} />
-                        <h3>{original_title}</h3>
-                    </Link>
-                        </li>)
+        <h2 className={styles.title}>Trending today</h2>
+        <MoviesList>
+                {data.map(({ id, original_title, poster_path }) => {
+                    return <CardMovie
+                        state={currenUrl}
+                        id={id}
+                        title={original_title}
+                        poster={poster_path} />
             })}
             <Outlet />
-        </ul>
+        </MoviesList>
         </>
     )
 }
+
+export default HomePage;

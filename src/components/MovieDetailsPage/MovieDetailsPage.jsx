@@ -5,7 +5,7 @@ import { BackBtn } from '../BackBtn';
 import * as API from '../../services/API';
 import styles from './MovieDetailsPage.module.css';
 
-export function MovieDetailsPage() { 
+function MovieDetailsPage() { 
     const {state} = useLocation();
     const [data, setData] = useState(null);
     const movieId = useParams().movieId;  
@@ -42,3 +42,5 @@ export function MovieDetailsPage() {
         </>
     )
 }
+
+export default MovieDetailsPage;

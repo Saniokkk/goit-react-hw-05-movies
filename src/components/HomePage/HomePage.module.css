@@ -1,18 +1,6 @@
-    .trendsList{
-        display: grid;
-        grid-template-columns: repeat(5, 20%);
-        grid-gap: 15px;
-
+    .title{
+        margin-bottom: 20px;
     }
-    
-    .trendsItem{       
-        padding: 10px;
-        border: 1px solid;
-        border-radius: 10px;
-        list-style: none;
-        text-decoration: none;
-    }
-
     img{
         border-radius: 5px;
     }

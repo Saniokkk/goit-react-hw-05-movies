@@ -1,0 +1,28 @@
+.movieList{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+}
+@media screen and (min-width: 380px) {
+    .movieList {   
+            grid-template-columns: 1fr 1fr;
+        }
+}
+
+@media screen and (min-width: 768px) {
+    .movieList {
+            grid-template-columns: repeat(4, 1fr);
+        }
+}
+
+.cardMovie{
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    list-style: none;
+    text-decoration: none;
+    }
+
+.cardMovie:hover{
+    
+}

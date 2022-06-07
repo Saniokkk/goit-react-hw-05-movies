@@ -1,9 +1,11 @@
+import { CardMovie } from "components/MoviesList/CardMovie";
+import { MoviesList } from "components/MoviesList/MoviesList";
 import { useState, useEffect } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import * as API from '../../services/API';
 import styles from './MoviesPage.module.css';
 
-export function MoviesPage() {
+function MoviesPage() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [inputValue, setInputValue] = useState('');
     const [searchValue, setSearchValue] = useState(null);
@@ -38,18 +40,24 @@ export function MoviesPage() {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <input type="text" name="search" value={inputValue} onChange={handleChange}/>
             <button type="submit">Search</button>
         </form>
             {data &&               
-            <ul className={styles.filmsList}>
-                {data.map((data) => {
-                    return <li key={data.id}><Link to={`/movies/${data.id}`} state={currenUrl}>{data.title}</Link></li>
+            <MoviesList>
+                {data.map(({id, title, poster_path}) => {
+                    return <CardMovie                        
+                        state={currenUrl}
+                        id={id}
+                        title={title}
+                        poster={poster_path} />
                     
                 })} 
-            </ul> 
+            </MoviesList> 
         }
         </>                
     )
 }
+
+export default MoviesPage;

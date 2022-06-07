@@ -5,8 +5,7 @@ import * as API from '../../services/API';
 import styles from './Cast.module.css';
 import placeholderImage from '../../placeholder.png';
 
-
-export function Cast() {
+function Cast () {
     const [data, setData] = useState(null);
     const movieId = useParams().movieId;
 
@@ -29,3 +28,5 @@ export function Cast() {
         </ul>
         )
 }   
+
+export default Cast;
